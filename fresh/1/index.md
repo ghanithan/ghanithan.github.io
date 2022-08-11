@@ -1,4 +1,0 @@
----
-layout: forward
-target: https://discord.com/blog/why-discord-is-switching-from-go-to-rust
----
