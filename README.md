@@ -4,4 +4,4 @@
 
 ## Building a wonderful porfolio page
 
-![Resume](/assets/Ghanithan_Resume.pdf)
+[Resume](/assets/Ghanithan_Resume.pdf)
