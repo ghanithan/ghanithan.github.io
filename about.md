@@ -1,6 +1,6 @@
 ---
 layout: about
-title: About Ghanithan
+title: About me
 permalink: /about
 ---
 
