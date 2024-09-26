@@ -109,7 +109,8 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
 
 @media screen and (max-width: 600px) {
     .site-nav label[for="nav-trigger"] {
-        display: block;
+        display: flex;
+        flex-direction: column;
         float: right;
         width: 36px;
         height: 36px;
@@ -120,7 +121,8 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
 
 @media screen and (max-width: 600px) {
     .site-nav .menu-icon {
-        display: block;
+        display: flex;
+        flex-direction: row;
         float: right;
         width: 36px;
         height: 26px;
@@ -165,8 +167,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
 
 @media screen and (max-width: 600px) {
     .site-nav input:checked ~ .trigger {
-        display: block;
+        display: flex;
+        flex-direction: column;
         padding-bottom: 5px;
+        
     }
 }
 
