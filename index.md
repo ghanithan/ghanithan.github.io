@@ -1,6 +1,7 @@
 ---
-title: Ghanithan's Blog
-permalink: /README
+title: Ghanithan
+permalink: /
 ---
+
 
 [Resume](/assets/Ghanithan_Resume.pdf)
