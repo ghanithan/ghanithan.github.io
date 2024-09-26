@@ -1,2 +1,5 @@
 description: "This is Ghanithan's personal website"
 email: "ghanithan@gmail.com"
+website: https://ghanithan.com
+basewebsite: /
+permalink: /:categories/:year/:month/:day/:title:output_ext
