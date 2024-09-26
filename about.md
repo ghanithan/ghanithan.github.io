@@ -5,10 +5,6 @@ permalink: /about
 ---
 
 
-# About
-
-
 ## Contact me
 
-- Email: [{{ site.email }}](mailto:{{ site.email }})
-- Twitter: [@ghanithan](https://x.com/ghanithan)
+<script type="text/javascript" src="https://form.jotform.com/jsform/242694326339464"></script>
