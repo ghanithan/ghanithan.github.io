@@ -23,6 +23,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 .site-title {
     font-size: 26px;
     font-weight: 300;
@@ -142,6 +146,24 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
     line-height: 1.5;
 }
 
+.post-list-heading {
+    font-size: 28px;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+}
+
+.post-list>li {
+    margin-bottom: 30px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
 
 @media screen and (max-width: 800px) {
     .wrapper {
