@@ -2,5 +2,3 @@
 title: Ghanithan's Blog
 permalink: /README
 ---
-
-[Resume](/assets/Ghanithan_Resume.pdf)
