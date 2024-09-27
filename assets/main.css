@@ -232,3 +232,7 @@ section ul{
     margin-left: 20px;
     margin-right: 20px;
 }
+
+/* linebreak */
+#content br {display: none;}
+#content p br {display: inline;}
