@@ -220,3 +220,14 @@ h1, h2, h3, h4, h5, h6 {
     display: table;
     clear: both;
 }
+
+section p img {
+    margin-left: 20px;
+    margin-right: 20px;
+    object-fit: contain;
+}
+
+section ul{
+    margin-left: 20px;
+    margin-right: 20px;
+}
