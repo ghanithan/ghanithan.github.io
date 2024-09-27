@@ -61,6 +61,11 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
     margin-bottom: 15px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+
 .post-link {
     display: block;
     font-size: 24px;
@@ -113,8 +118,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
 
 @media screen and (max-width: 600px) {
     .site-nav label[for="nav-trigger"] {
-        display: flex;
-        flex-direction: column;
+        display: block;
         float: right;
         width: 36px;
         height: 36px;
@@ -125,8 +129,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
 
 @media screen and (max-width: 600px) {
     .site-nav .menu-icon {
-        display: flex;
-        flex-direction: row;
+        display: block;
         float: right;
         width: 36px;
         height: 26px;
@@ -134,7 +137,14 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
         padding-top: 10px;
         text-align: center;
     }
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+
+    }
 }
+
+
 
 .site-nav {
     float: right;
@@ -157,12 +167,6 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
 
 .post-list>li {
     margin-bottom: 30px;
-}
-
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-    unicode-bidi: isolate;
 }
 
 @media screen and (max-width: 800px) {
@@ -189,10 +193,12 @@ li {
 
 @media screen and (max-width: 600px) {
     .site-nav input:checked ~ .trigger {
-        display: flex;
-        flex-direction: column;
+        display: block;
         padding-bottom: 5px;
-        
+    }
+    .site-nav input:checked ~ .nav-items {
+        display: flex;
+        flex-direction: row;
     }
 }
 
