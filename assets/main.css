@@ -137,10 +137,7 @@ h1, h2, h3, h4, h5, h6 {
         padding-top: 10px;
         text-align: center;
     }
-    .nav-items {
-        display: flex;
-        flex-direction: column;
-    }
+ 
     
 }
 
@@ -207,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 600px) {
-    .site-nav input ~ .nav-items .trigger {
+    .site-nav input ~ .trigger {
         clear: both;
         display: none;
     }
