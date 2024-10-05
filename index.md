@@ -13,7 +13,7 @@ With over 13 years of experience across different domains, I’ve grown into som
 My management style is to inspire my team to build solutions together rather than just monitoring them. I'm excited to be part of the Rust ecosystem and to contribute to its growth. Reach out if you have any interesting projects to discuss, especially anything related to Rust.
 
 ---
-
+** **
 
 **WORK EXPERIENCE**  
 
