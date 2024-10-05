@@ -1,8 +1,6 @@
 ---
 permalink: /
 ---
-
-
 As a Principal Engineer, my day-to-day work involves designing high-performance software and building it collaboratively with my team. After spending the first six years of my career in embedded systems and automotive software, and now specializing in Rust, I have developed a keen eye for creating low-footprint, high-performance software.
 
 With over 13 years of experience across various domains, I have cultivated a T-shaped skill set, gaining expertise across nearly every aspect of software development, including:
