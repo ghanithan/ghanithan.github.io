@@ -95,5 +95,5 @@ AWS (complete VPC setup) , GCP
 - Working on URLJammer, a url shorterner based on Jamstack  
 - Interactive console mp3player written in C++  
 - PDFReplicator used to create millions of PDFs from a template and a data source, built in JAVA  
-- Intelligent Traffic Control System using Zigbee Mes  
+- Intelligent Traffic Control System using Zigbee Mesh  
 - Integrated Brake and Turn Indication System (1st prize in HW section in VISION ‘10 - Anna University)
