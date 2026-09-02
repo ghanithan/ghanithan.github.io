@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* Semantic tokens are indirected through plain custom properties so the dark
+   palette can swap them without regenerating any Tailwind utility. */
+@theme inline {
+  --color-ground: var(--ground);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-signal: var(--signal);
+  --color-anomaly: var(--anomaly);
+  --color-rule: var(--rule);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+:root {
+  /* Instrument-panel face: cool, not cream. */
+  --ground: #f2f3f5;
+  --ink: #16181d;
+  --muted: #5c6470;
+  --signal: #1b3fe0;
+  /* Reserved for the underwriting years. Appears nowhere else. */
+  --anomaly: #c8761b;
+  --rule: #dde0e4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #101216;
+    --ink: #e6e8ec;
+    --muted: #98a0ae;
+    --signal: #8098ff;
+    --anomaly: #e0a050;
+    --rule: #262a31;
+  }
+}
+
+html {
+  background: var(--ground);
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* One visible focus treatment everywhere, rather than per-component. */
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* Must be layered: unlayered rules outrank Tailwind utilities, so an unlayered
+   `a { text-decoration-line: underline }` would defeat `no-underline`. */
+@layer base {
+  a {
+    color: inherit;
+    /* Preflight sets text-decoration:inherit, which kills the underline. */
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, var(--signal) 45%, transparent);
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+
+  a:hover {
+    text-decoration-color: var(--signal);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Long-form prose: the résumé and reading pages. Kept deliberately plain. */
+.prose {
+  max-width: 68ch;
+  line-height: 1.65;
+}
+
+.prose p {
+  margin-block: 0.9em;
+}
+
+.prose h2 {
+  margin-block: 2em 0.6em;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.prose ul {
+  margin-block: 0.7em;
+  padding-left: 1.1em;
+  list-style: none;
+}
+
+.prose li {
+  position: relative;
+  margin-block: 0.35em;
+}
+
+.prose li::before {
+  content: "";
+  position: absolute;
+  left: -1.1em;
+  top: 0.72em;
+  width: 0.45em;
+  height: 1px;
+  background: var(--rule);
+}
