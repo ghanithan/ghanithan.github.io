@@ -130,22 +130,20 @@ export default function SignalTrace() {
           stroke="var(--rule)"
           vectorEffect="non-scaling-stroke"
         />
-        {segments.map(({ role, d }, i) => {
-          const isFlat = role.kind === 'flat';
-          return (
-            <path
-              key={role.id}
-              d={d}
-              fill="none"
-              stroke={isFlat ? 'var(--anomaly)' : 'var(--signal)'}
-              // The dead line is the point of the drawing — it never dims.
-              strokeWidth={isFlat ? 3 : i === active ? 2.5 : 1.5}
-              opacity={isFlat || i === active ? 1 : 0.5}
-              strokeLinejoin="miter"
-              vectorEffect="non-scaling-stroke"
-            />
-          );
-        })}
+        {segments.map(({ role, d }, i) => (
+          <path
+            key={role.id}
+            d={d}
+            fill="none"
+            // Colour alone marks the detour. Giving it extra weight as well
+            // made three years read as the whole story.
+            stroke={role.kind === 'flat' ? 'var(--anomaly)' : 'var(--signal)'}
+            strokeWidth={i === active ? 2.5 : 1.5}
+            opacity={i === active ? 1 : 0.5}
+            strokeLinejoin="miter"
+            vectorEffect="non-scaling-stroke"
+          />
+        ))}
       </svg>
 
       {/* Tick marks are the keyboard control; era labels carry the meaning. */}

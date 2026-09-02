@@ -23,8 +23,9 @@ export default function Home() {
           I started at the register level.
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
-          Device drivers for diesel engine ECUs, and for three years I wasn&rsquo;t a
-          programmer at all — I was a risk underwriter.
+          Device drivers for diesel engine ECUs, then Go microservices at 60,000
+          transactions a second, now delivery and security tooling. Twelve years of
+          engineering — and three, in the middle, underwriting insurance risk.
         </p>
       </section>
 
@@ -41,10 +42,15 @@ export default function Home() {
             metrics, and the scanning that runs across all of it.
           </p>
           <p>
-            Most of my own time goes to Rust. I care about software with a small
-            footprint, which is mostly a habit from the years when the footprint was the
-            whole problem. If you are building something interesting, I would like to hear
-            about it.
+            My first six years were embedded systems and automotive software, which is
+            where caring about footprint becomes a habit rather than a preference. Since
+            then I have worked across most of the stack — solution design, backend, DevOps,
+            testing, and enough UI to be useful in the conversation. I would rather inspire
+            a team to build something together than monitor them building it.
+          </p>
+          <p>
+            Most of my own time goes to Rust. If you are building something interesting, I
+            would like to hear about it.
           </p>
         </div>
       </section>
