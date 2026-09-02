@@ -146,6 +146,7 @@ export const ROLES: Role[] = [
       'Designed the audit service, and delivered it to other services as a Go package with a fluent, chainable API, so recording an event is one expression at the call site',
       'Built a context service for cloud security posture data, exposed to AI agents over MCP, with its own query language and a TTL-based lifecycle',
       'GitHub App integration for on-premises installations, covering credential distribution and key rotation',
+      'Laid out the architecture documentation and the plan behind it, which the team absorbed and now owns',
       'Cross-platform OVA distribution for GCP, AWS and VMware, streamlining customer onboarding',
       'Designed a global service collecting and rendering OSS library metrics and vulnerabilities, and extended ZAP scanning to cover OpenAPI v2 and v3',
       'Raised platform observability using OpenTelemetry with a collector for aggregation, and Prometheus',
