@@ -142,6 +142,8 @@ export const ROLES: Role[] = [
     summary: 'Platform architecture: auth, audit, security posture.',
     bullets: [
       'Architected a virtual application packaging solution with Packer, K3s and shell scripting, taking deployment from 8 hours to 5 minutes',
+      'Performance work on the Dgraph cluster behind the product: cutting pod restarts, sizing memory, cache and index allocation against real workloads, and pulling query latency down toward a couple of seconds',
+      'Built a diagnostic pair customers run against their own cluster, collecting database and node telemetry into a single report with sizing recommendations, alongside the runbook for acting on it',
       'Designed the authentication and authorisation architecture: the token model, session handling, and the authorisation model, wired through to audit',
       'Designed the audit service, and delivered it to other services as a Go package with a fluent, chainable API, so recording an event is one expression at the call site',
       'Built a context service for cloud security posture data, exposed to AI agents over MCP, with its own query language and a TTL-based lifecycle',

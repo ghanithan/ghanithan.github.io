@@ -55,9 +55,10 @@ export default function Home() {
           <p>
             I am a principal engineer at OpsMx, working on how software gets delivered and
             secured. Lately that has meant the architecture underneath it: authentication
-            and authorisation, an audit service, a context service that hands cloud
-            security posture to AI agents over MCP, and right now, making the whole thing
-            faster.
+            and authorisation, an audit service, and a context service that hands cloud
+            security posture to AI agents over MCP. Right now it is performance: why the
+            graph database restarts, how it should be sized, and what it takes to get a
+            query back in under a couple of seconds.
           </p>
           <p>
             My first six years were embedded systems and automotive software, which is
