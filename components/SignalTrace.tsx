@@ -8,6 +8,8 @@ const VH = 116;
 const HI = 26;
 const LO = 84;
 const AXIS = 104;
+/** Rails for the actuarial years: same baseline, a fraction of the swing. */
+const LOW_HI = 62;
 
 const Y_START = 2011.2;
 const Y_END = 2026.9;
@@ -18,7 +20,7 @@ const pct = (year: number) => (px(year) / VW) * 100;
 /* Cycles per year, rising left to right — the clock speeds up as the career does. */
 const PERIOD: Record<Role['kind'], number> = {
   square: 0.85,
-  flat: 0,
+  low: 1.05,
   pulse: 0.45,
   fast: 0.16,
 };
@@ -26,7 +28,7 @@ const PERIOD: Record<Role['kind'], number> = {
 /** Eras, not roles — five labels read where eight would collide. */
 const ERAS = [
   { id: 'embedded', label: 'embedded', from: 2011.42, to: 2016.75, anomalous: false },
-  { id: 'underwriting', label: 'underwriting', from: 2016.83, to: 2019.99, anomalous: true },
+  { id: 'actuarial', label: 'actuarial', from: 2016.83, to: 2019.99, anomalous: true },
   { id: 'go', label: 'go', from: 2020.0, to: 2023.42, anomalous: false },
   { id: 'rust', label: 'rust', from: 2023.42, to: 2024.75, anomalous: false },
   { id: 'platform', label: 'platform', from: 2024.83, to: 2026.75, anomalous: false },
@@ -40,22 +42,16 @@ const MIN_PULSE_PX = 13;
 
 function pointsFor(role: Role, minPeriod: number, settle: boolean): [number, number][] {
   const { kind, start, end } = role;
-  if (kind === 'flat') {
-    return [
-      [px(start), LO],
-      [px(end), LO],
-    ];
-  }
-
   const half = Math.max(PERIOD[kind], minPeriod) / 2;
   // The current role stops oscillating and holds high — it is still running.
   const settleAt = settle ? start + (end - start) * 0.55 : end;
+  const top = kind === 'low' ? LOW_HI : HI;
 
   const pts: [number, number][] = [];
   let t = start;
   let high = true;
   while (t < settleAt) {
-    const y = high ? HI : LO;
+    const y = high ? top : LO;
     pts.push([px(t), y], [px(Math.min(t + half, settleAt)), y]);
     high = !high;
     t += half;
@@ -109,7 +105,7 @@ export default function SignalTrace() {
   }, []);
 
   const current = ROLES[active];
-  const dead = current.kind === 'flat';
+  const offPath = current.kind === 'low';
 
   return (
     <figure className="m-0">
@@ -130,20 +126,23 @@ export default function SignalTrace() {
           stroke="var(--rule)"
           vectorEffect="non-scaling-stroke"
         />
-        {segments.map(({ role, d }, i) => (
-          <path
-            key={role.id}
-            d={d}
-            fill="none"
-            // Colour alone marks the detour. Giving it extra weight as well
-            // made three years read as the whole story.
-            stroke={role.kind === 'flat' ? 'var(--anomaly)' : 'var(--signal)'}
-            strokeWidth={i === active ? 2.5 : 1.5}
-            opacity={i === active ? 1 : 0.5}
-            strokeLinejoin="miter"
-            vectorEffect="non-scaling-stroke"
-          />
-        ))}
+        {segments.map(({ role, d }, i) => {
+          const low = role.kind === 'low';
+          return (
+            <path
+              key={role.id}
+              d={d}
+              fill="none"
+              // Colour and dash mark a different discipline, not a dead line.
+              stroke={low ? 'var(--anomaly)' : 'var(--signal)'}
+              strokeDasharray={low ? '7 4' : undefined}
+              strokeWidth={i === active ? 2.5 : 1.5}
+              opacity={i === active ? 1 : 0.5}
+              strokeLinejoin="miter"
+              vectorEffect="non-scaling-stroke"
+            />
+          );
+        })}
       </svg>
 
       {/* Tick marks are the keyboard control; era labels carry the meaning. */}
@@ -191,7 +190,7 @@ export default function SignalTrace() {
       <figcaption className="min-h-[3rem] text-[15px]" aria-live="polite">
         <span
           className="font-mono text-xs"
-          style={{ color: dead ? 'var(--anomaly)' : 'var(--muted)' }}
+          style={{ color: offPath ? 'var(--anomaly)' : 'var(--muted)' }}
         >
           {current.period}
         </span>

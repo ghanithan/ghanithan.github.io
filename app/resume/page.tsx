@@ -26,7 +26,7 @@ export default function Resume() {
               <h3 className="font-medium">{role.title}</h3>
               <span
                 className="font-mono text-xs ml-auto"
-                style={{ color: role.kind === 'flat' ? 'var(--anomaly)' : 'var(--muted)' }}
+                style={{ color: role.kind === 'low' ? 'var(--anomaly)' : 'var(--muted)' }}
               >
                 {role.period}
               </span>

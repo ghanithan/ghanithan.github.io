@@ -1,4 +1,5 @@
-export type TraceKind = 'square' | 'flat' | 'pulse' | 'fast';
+/** 'low' is the actuarial stretch — quieter and slower, but not absent. */
+export type TraceKind = 'square' | 'low' | 'pulse' | 'fast';
 
 export type Role = {
   id: string;
@@ -73,11 +74,11 @@ export const ROLES: Role[] = [
     period: '11/2016 – 12/2019',
     start: 2016.83,
     end: 2019.99,
-    kind: 'flat',
-    summary: 'Not writing software at all. Underwriting risk.',
+    kind: 'low',
+    summary: 'Pricing risk, and qualifying as an actuary.',
     bullets: [
       'General insurance underwriting',
-      'Completed a Fellowship of the Insurance Institute of India',
+      'Completed a Fellowship of the Insurance Institute of India, with distinction in Actuary',
     ],
   },
   {
