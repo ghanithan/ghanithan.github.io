@@ -54,8 +54,10 @@ export default function Home() {
         <div className="prose text-[15px]">
           <p>
             I am a principal engineer at OpsMx, working on how software gets delivered and
-            secured: application packaging, cross-cloud distribution, vulnerability
-            metrics, and the scanning that runs across all of it.
+            secured. Lately that has meant the architecture underneath it: authentication
+            and authorisation, an audit service, a context service that hands cloud
+            security posture to AI agents over MCP, and right now, making the whole thing
+            faster.
           </p>
           <p>
             My first six years were embedded systems and automotive software, which is
