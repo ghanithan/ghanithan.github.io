@@ -1,4 +1,4 @@
-/** 'low' is the actuarial stretch: quieter and slower, but not absent. */
+/** 'low' is the underwriting stretch: quieter and slower, but not absent. */
 export type TraceKind = 'square' | 'low' | 'pulse' | 'fast';
 
 export type Role = {
@@ -75,7 +75,7 @@ export const ROLES: Role[] = [
     start: 2016.83,
     end: 2019.99,
     kind: 'low',
-    summary: 'Pricing risk, and qualifying as an actuary.',
+    summary: 'Underwriting general insurance.',
     bullets: [
       'General insurance underwriting',
       'Completed a Fellowship of the Insurance Institute of India, with distinction in Actuary',

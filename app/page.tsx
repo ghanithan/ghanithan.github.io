@@ -41,7 +41,7 @@ export default function Home() {
         <p className="mt-4 max-w-2xl text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
           Device drivers for diesel engine ECUs, then Go microservices at 60,000
           transactions a second, now delivery and security tooling. Twelve years of
-          engineering, and three spent pricing risk as a qualified actuary.
+          engineering, and three underwriting general insurance.
         </p>
       </section>
 

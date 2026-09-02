@@ -8,7 +8,7 @@ const VH = 116;
 const HI = 26;
 const LO = 84;
 const AXIS = 104;
-/** Rails for the actuarial years: same baseline, a fraction of the swing. */
+/** Rails for the underwriting years: same baseline, a fraction of the swing. */
 const LOW_HI = 62;
 
 const Y_START = 2011.2;
@@ -28,7 +28,7 @@ const PERIOD: Record<Role['kind'], number> = {
 /** Eras, not roles: five labels read where eight would collide. */
 const ERAS = [
   { id: 'embedded', label: 'embedded', from: 2011.42, to: 2016.75, anomalous: false },
-  { id: 'actuarial', label: 'actuarial', from: 2016.83, to: 2019.99, anomalous: true },
+  { id: 'underwriting', label: 'underwriting', from: 2016.83, to: 2019.99, anomalous: true },
   { id: 'go', label: 'go', from: 2020.0, to: 2023.42, anomalous: false },
   { id: 'rust', label: 'rust', from: 2023.42, to: 2024.75, anomalous: false },
   { id: 'platform', label: 'platform', from: 2024.83, to: 2026.75, anomalous: false },
