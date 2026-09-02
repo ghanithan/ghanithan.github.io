@@ -20,15 +20,16 @@ const PERIOD: Record<Role['kind'], number> = {
   square: 0.85,
   flat: 0,
   pulse: 0.45,
-  fast: 0.22,
+  fast: 0.16,
 };
 
-/** Eras, not roles — four labels read where seven would collide. */
+/** Eras, not roles — five labels read where eight would collide. */
 const ERAS = [
   { id: 'embedded', label: 'embedded', from: 2011.42, to: 2016.75, anomalous: false },
   { id: 'underwriting', label: 'underwriting', from: 2016.83, to: 2019.99, anomalous: true },
   { id: 'go', label: 'go', from: 2020.0, to: 2023.42, anomalous: false },
-  { id: 'rust', label: 'rust', from: 2023.42, to: 2026.75, anomalous: false },
+  { id: 'rust', label: 'rust', from: 2023.42, to: 2024.75, anomalous: false },
+  { id: 'platform', label: 'platform', from: 2024.83, to: 2026.75, anomalous: false },
 ];
 
 /**
@@ -37,7 +38,7 @@ const ERAS = [
  */
 const MIN_PULSE_PX = 13;
 
-function pointsFor(role: Role, minPeriod: number): [number, number][] {
+function pointsFor(role: Role, minPeriod: number, settle: boolean): [number, number][] {
   const { kind, start, end } = role;
   if (kind === 'flat') {
     return [
@@ -48,7 +49,7 @@ function pointsFor(role: Role, minPeriod: number): [number, number][] {
 
   const half = Math.max(PERIOD[kind], minPeriod) / 2;
   // The current role stops oscillating and holds high — it is still running.
-  const settleAt = kind === 'fast' ? start + (end - start) * 0.5 : end;
+  const settleAt = settle ? start + (end - start) * 0.55 : end;
 
   const pts: [number, number][] = [];
   let t = start;
@@ -59,7 +60,7 @@ function pointsFor(role: Role, minPeriod: number): [number, number][] {
     high = !high;
     t += half;
   }
-  if (kind === 'fast') pts.push([px(settleAt), HI], [px(end), HI]);
+  if (settle) pts.push([px(settleAt), HI], [px(end), HI]);
   return pts;
 }
 
@@ -83,8 +84,8 @@ export default function SignalTrace() {
   const segments = useMemo(() => {
     const minPeriod = (MIN_PULSE_PX / Math.max(width, 1)) * (Y_END - Y_START);
     let prev: [number, number] | null = null;
-    return ROLES.map((role) => {
-      const pts = pointsFor(role, minPeriod);
+    return ROLES.map((role, i) => {
+      const pts = pointsFor(role, minPeriod, i === ROLES.length - 1);
       const joined = prev ? [prev, ...pts] : pts;
       prev = pts[pts.length - 1];
       return { role, d: toPath(joined) };
@@ -172,13 +173,15 @@ export default function SignalTrace() {
         ))}
       </div>
 
-      <div className="relative h-5 mb-4" aria-hidden="true">
-        {ERAS.map((era) => (
+      {/* Staggered across two rows so adjacent labels cannot collide on narrow screens. */}
+      <div className="relative h-9 mb-3" aria-hidden="true">
+        {ERAS.map((era, i) => (
           <span
             key={era.id}
-            className="absolute top-0 -translate-x-1/2 font-mono text-[11px] whitespace-nowrap"
+            className="absolute -translate-x-1/2 font-mono text-[11px] whitespace-nowrap"
             style={{
               left: `${pct((era.from + era.to) / 2)}%`,
+              top: i % 2 === 0 ? 0 : '1.15rem',
               color: era.anomalous ? 'var(--anomaly)' : 'var(--muted)',
             }}
           >

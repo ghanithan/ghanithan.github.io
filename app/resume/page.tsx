@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ROLES, SKILLS, PROJECTS } from '@/lib/career';
+import { ROLES, SKILLS, PROJECTS, CERTIFICATIONS } from '@/lib/career';
 
 export const metadata: Metadata = {
   title: 'Résumé',
@@ -13,7 +13,7 @@ export default function Resume() {
       <header className="pb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Résumé</h1>
         <p className="mt-3 text-[15px] max-w-2xl" style={{ color: 'var(--muted)' }}>
-          Thirteen years, oldest last. There is also a{' '}
+          Fifteen years, newest first. Based in Chennai. There is also a{' '}
           <a href="/Ghanithan_Resume.pdf">PDF</a> if you need one.
         </p>
       </header>
@@ -57,6 +57,17 @@ export default function Resume() {
             </div>
           ))}
         </dl>
+      </section>
+
+      <section className="pb-10">
+        <h2 className="text-sm font-medium mb-4">Certifications</h2>
+        <div className="prose text-[15px]">
+          <ul>
+            {CERTIFICATIONS.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <section className="pb-10">

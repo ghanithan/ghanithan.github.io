@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: '%s — Ghanithan Subramani',
   },
   description:
-    'Principal engineer. Rust and Go today, diesel engine ECUs and PCBs before that, and three years underwriting risk in between.',
+    'Principal engineer at OpsMx. Delivery and security tooling today, diesel engine ECUs and circuit boards before that, and three years underwriting insurance risk in between.',
   openGraph: {
     type: 'website',
     siteName: 'Ghanithan Subramani',
