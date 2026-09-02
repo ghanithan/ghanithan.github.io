@@ -2,19 +2,19 @@ import type { Metadata } from 'next';
 import { ROLES, SKILLS, PROJECTS, CERTIFICATIONS } from '@/lib/career';
 
 export const metadata: Metadata = {
-  title: 'Résumé',
+  title: 'Work',
   description:
-    'Thirteen years across embedded systems, insurance underwriting, Go microservices and Rust backends.',
+    'Fifteen years across embedded systems, insurance underwriting, Go microservices, Rust backends and platform security.',
 };
 
 export default function Resume() {
   return (
     <div className="pt-6">
       <header className="pb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Résumé</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">Work</h1>
         <p className="mt-3 text-[15px] max-w-2xl" style={{ color: 'var(--muted)' }}>
-          Fifteen years, newest first. Based in Chennai. There is also a{' '}
-          <a href="/Ghanithan_Resume.pdf">PDF</a> if you need one.
+          Fifteen years of it, newest first. Based in Chennai. There is a{' '}
+          <a href="/Ghanithan_Resume.pdf">PDF résumé</a> if you need one of those.
         </p>
       </header>
 

@@ -40,7 +40,8 @@ const NAV = [
   { href: '/', label: 'Home', internal: true },
   { href: '/blog/', label: 'Writing', internal: false },
   { href: '/reading/', label: 'Reading', internal: true },
-  { href: '/resume/', label: 'Résumé', internal: true },
+  /* URL stays /resume/ so the conventional path still resolves. */
+  { href: '/resume/', label: 'Work', internal: true },
   { href: '/about/', label: 'About', internal: true },
 ];
 
