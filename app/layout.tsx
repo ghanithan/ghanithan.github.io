@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.ghanithan.com'),
   title: {
     default: 'Ghanithan Subramani',
-    template: '%s — Ghanithan Subramani',
+    template: '%s | Ghanithan Subramani',
   },
   description:
     'Principal engineer at OpsMx. Delivery and security tooling today, diesel engine ECUs and circuit boards before that, and three years underwriting insurance risk in between.',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 };
 
 /* /blog/ and the project paths are separate repos on the same domain, so they
-   are plain anchors — client-side routing would 404 against this app. */
+   are plain anchors; client-side routing would 404 against this app. */
 const NAV = [
   { href: '/', label: 'Home', internal: true },
   { href: '/blog/', label: 'Writing', internal: false },

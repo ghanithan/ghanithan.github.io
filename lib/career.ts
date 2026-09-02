@@ -1,4 +1,4 @@
-/** 'low' is the actuarial stretch — quieter and slower, but not absent. */
+/** 'low' is the actuarial stretch: quieter and slower, but not absent. */
 export type TraceKind = 'square' | 'low' | 'pulse' | 'fast';
 
 export type Role = {
@@ -16,7 +16,7 @@ export type Role = {
   bullets: string[];
 };
 
-/** Oldest first — the trace reads left to right. */
+/** Oldest first; the trace reads left to right. */
 export const ROLES: Role[] = [
   {
     id: 'bosch-1',
@@ -28,7 +28,7 @@ export const ROLES: Role[] = [
     kind: 'square',
     summary: 'Diesel truck engine software. The register level.',
     bullets: [
-      'Development on diesel truck engine software, including the full implementation of water pump control — a new feature in the project',
+      'Development on diesel truck engine software, including the full implementation of water pump control, a new feature in the project',
       'Extended the device encapsulation library for new temperature and pressure sensors, auto-generating C from Perl scripts and the preprocessor',
       'Emergency restart, CAN frame implementation, post-drive relay and resource optimisation',
       'Driver implementation for sensors and actuators; pin allocation and power stages for relays',
@@ -46,7 +46,7 @@ export const ROLES: Role[] = [
     summary: 'Industrial automation boards, drawn from scratch.',
     bullets: [
       'Product development in industrial automation on ARM Cortex-M series controllers',
-      'Designed products from scratch — requirement analysis, component selection, circuit schematic and PCB layout',
+      'Designed products from scratch: requirement analysis, component selection, circuit schematic and PCB layout',
       'Two projects taken from requirement to product, in weight-based industrial automation and home automation, plus 6 major boards for other projects',
       'Wrote firmware for ARM Cortex-M0, and drivers for CAN, I2C, SPI, UART and high-precision ADCs',
       'Built service libraries to speed up board software development',
@@ -83,7 +83,7 @@ export const ROLES: Role[] = [
   },
   {
     id: 'uiic-eng',
-    title: 'Lead Full Stack Engineer — Administrative Officer',
+    title: 'Lead Full Stack Engineer, Administrative Officer',
     org: 'United India Insurance Company Ltd',
     period: '01/2020 – 08/2022',
     start: 2020.0,
@@ -91,7 +91,7 @@ export const ROLES: Role[] = [
     kind: 'pulse',
     summary: 'Back to code, running new IT initiatives.',
     bullets: [
-      'Built an offline-first PWA premium calculator — Svelte, Vite, PouchDB and Workbox on the front end, Go (Fiber) and CouchDB behind it',
+      'Built an offline-first PWA premium calculator: Svelte, Vite, PouchDB and Workbox on the front end, Go (Fiber) and CouchDB behind it',
       'Built an internal Document Management System in Go (Gin) with MongoDB',
       'Led cross-functional teams on Digilocker integration, a claims reporting solution for banks, and critical debugging',
       'Wrote a phonetic name comparison algorithm and REST API for Indian names, in the spirit of Soundex',
@@ -100,7 +100,7 @@ export const ROLES: Role[] = [
   {
     id: 'quickplay',
     title: 'Senior Software Engineer',
-    org: 'XRG Consulting — for Quickplay Media',
+    org: 'XRG Consulting, for Quickplay Media',
     period: '09/2022 – 06/2023',
     start: 2022.67,
     end: 2023.42,
@@ -124,7 +124,7 @@ export const ROLES: Role[] = [
     summary: 'Idiomatic Rust, low latency, small team.',
     bullets: [
       'Built a low-latency market data aggregation service and an OTC trading solution with a very small team at an early-stage startup',
-      'Architected a high-performance REST and WebSocket backend in idiomatic Rust — Tokio, tungstenite, axum',
+      'Architected a high-performance REST and WebSocket backend in idiomatic Rust: Tokio, tungstenite, axum',
       'Created a Bitcoin wallet service from the ground up in Rust',
       'Owned the AWS VPC architecture and led DevOps on secure, scalable, cost-efficient infrastructure',
       'Monitoring and traceability with OpenTelemetry, Jaeger, Prometheus, Grafana and Honeycomb',
@@ -172,20 +172,20 @@ export const CERTIFICATIONS: string[] = [
   'Google Cloud Professional Cloud Architect',
   'Google Cloud Essentials',
   'Build Infrastructure with Terraform on Google Cloud (skill badge)',
-  'Fellow of the Insurance Institute of India — distinction in Actuary (FE93778)',
+  'Fellow of the Insurance Institute of India, with distinction in Actuary (FE93778)',
   'Foundations of User Experience (UX) Design',
 ];
 
 export const PROJECTS: { name: string; note: string; href?: string }[] = [
   {
     name: 'rust-tour',
-    note: 'Interactive Rust learning platform, with exercises tracking The Rust Programming Language.',
+    note: 'Interactive Rust course following The Rust Programming Language. 40 test-driven exercises across 5 chapters, with a Monaco editor and an integrated terminal. Written in Rust.',
     href: 'https://rust-tour.dev/',
   },
   {
     name: 'archMD',
-    note: 'Single-file browser Markdown editor — live preview, Mermaid diagrams, HTML and PDF export.',
-    href: 'http://www.archmd.dev/',
+    note: 'Markdown editor in a single HTML file. Live preview, Mermaid diagrams, direct disk access via the File System Access API, and export to HTML or PDF. No build step, no server.',
+    href: 'https://www.archmd.dev/',
   },
   {
     name: 'URLJammer',

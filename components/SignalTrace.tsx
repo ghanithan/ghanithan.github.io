@@ -17,7 +17,7 @@ const Y_END = 2026.9;
 const px = (year: number) => ((year - Y_START) / (Y_END - Y_START)) * VW;
 const pct = (year: number) => (px(year) / VW) * 100;
 
-/* Cycles per year, rising left to right — the clock speeds up as the career does. */
+/* Cycles per year, rising left to right; the clock speeds up as the career does. */
 const PERIOD: Record<Role['kind'], number> = {
   square: 0.85,
   low: 1.05,
@@ -25,7 +25,7 @@ const PERIOD: Record<Role['kind'], number> = {
   fast: 0.16,
 };
 
-/** Eras, not roles — five labels read where eight would collide. */
+/** Eras, not roles: five labels read where eight would collide. */
 const ERAS = [
   { id: 'embedded', label: 'embedded', from: 2011.42, to: 2016.75, anomalous: false },
   { id: 'actuarial', label: 'actuarial', from: 2016.83, to: 2019.99, anomalous: true },
@@ -43,7 +43,7 @@ const MIN_PULSE_PX = 13;
 function pointsFor(role: Role, minPeriod: number, settle: boolean): [number, number][] {
   const { kind, start, end } = role;
   const half = Math.max(PERIOD[kind], minPeriod) / 2;
-  // The current role stops oscillating and holds high — it is still running.
+  // The current role stops oscillating and holds high; it is still running.
   const settleAt = settle ? start + (end - start) * 0.55 : end;
   const top = kind === 'low' ? LOW_HI : HI;
 
@@ -164,7 +164,7 @@ export default function SignalTrace() {
               style={{ background: i === active ? 'var(--ink)' : 'var(--rule)' }}
             />
             <span className="sr-only">
-              {role.period} — {role.title}, {role.org}
+              {role.period}, {role.title}, {role.org}
             </span>
           </button>
         ))}
