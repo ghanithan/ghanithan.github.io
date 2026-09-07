@@ -13,9 +13,18 @@ export default function Resume() {
       <header className="pb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Work</h1>
         <p className="mt-3 text-[15px] max-w-2xl" style={{ color: 'var(--muted)' }}>
-          Fifteen years of it, newest first. Based in Chennai. There is a{' '}
-          <a href="/Ghanithan_Resume.pdf">PDF résumé</a> if you need one of those.
+          Fifteen years of it, newest first. Based in Chennai.
         </p>
+        {/* Single column and plain, so it survives an applicant tracking
+            system's parser intact. */}
+        <a
+          className="btn mt-5"
+          href="/Ghanithan_Resume.pdf"
+          download="Ghanithan_Subramani_Resume.pdf"
+        >
+          <span className="font-medium">Download résumé</span>
+          <span className="btn-meta">PDF · 2 pages</span>
+        </a>
       </header>
 
       <section className="pb-10">
