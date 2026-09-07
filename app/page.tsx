@@ -2,7 +2,8 @@ import SignalTrace from '@/components/SignalTrace';
 import { ROLES } from '@/lib/career';
 
 /* The arc in four stops: what I do now, the Rust years, the throughput
-   problem, and the boards. Each names the bullet worth leading with. */
+   problem, and the boards. `bullet` picks the résumé line to lead with,
+   unless the role carries its own `impact` line. */
 const SELECTED = [
   { id: 'opsmx', bullet: 0 },
   { id: 'astra', bullet: 0 },
@@ -109,7 +110,7 @@ export default function Home() {
                 </span>
               </div>
               <p className="mt-2 text-[15px] leading-relaxed max-w-2xl">
-                {role.bullets[bullet]}
+                {role.impact ?? role.bullets[bullet]}
               </p>
             </li>
           ))}

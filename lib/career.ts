@@ -13,6 +13,12 @@ export type Role = {
   kind: TraceKind;
   /** One line, shown in the trace readout. */
   summary: string;
+  /**
+   * What the homepage card leads with. A résumé bullet describes one
+   * deliverable; this says what the whole role amounts to. Falls back to a
+   * bullet when a role does not need the distinction.
+   */
+  impact?: string;
   bullets: string[];
 };
 
@@ -140,6 +146,8 @@ export const ROLES: Role[] = [
     end: 2026.75,
     kind: 'pulse',
     summary: 'Platform architecture: auth, audit, security posture.',
+    impact:
+      'Platform architecture across authentication and authorisation, audit, and the service that hands cloud security posture to AI agents over MCP. Cut deployment from 8 hours to 5 minutes, and turned graph-database debugging into a toolset customers run against their own clusters.',
     bullets: [
       'Architected a virtual application packaging solution with Packer, K3s and shell scripting, taking deployment from 8 hours to 5 minutes',
       'Performance work on the Dgraph cluster behind the product: cutting pod restarts, sizing memory, cache and index allocation against real workloads, and pulling query latency down toward a couple of seconds',
