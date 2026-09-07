@@ -13,7 +13,7 @@ export default function Resume() {
       <header className="pb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Work</h1>
         <p className="mt-3 text-[15px] max-w-2xl" style={{ color: 'var(--muted)' }}>
-          Fifteen years of it, newest first. Based in Chennai.
+          Fifteen years of it, newest first. Based in Coimbatore.
         </p>
         {/* Single column and plain, so it survives an applicant tracking
             system's parser intact. */}
