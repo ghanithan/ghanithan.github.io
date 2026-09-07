@@ -23,7 +23,7 @@ const BUILDING = [
     name: 'archMD',
     href: 'https://www.archmd.dev/',
     domain: 'archmd.dev',
-    note: 'A Markdown editor that is one HTML file. Live preview, Mermaid diagrams, syntax highlighting, and it opens and saves straight to your disk through the File System Access API. No build step, no server, nothing to install.',
+    note: 'An offline-first PWA for system architects. Live preview, Mermaid diagrams, and it reads and writes your disk directly through the File System Access API. Its MCP server pairs it with Claude Code, so the CLI writes the markdown and archMD renders it. Growing into a curation tool for architecture documentation.',
   },
 ];
 

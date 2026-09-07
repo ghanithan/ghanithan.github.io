@@ -197,7 +197,7 @@ export const PROJECTS: { name: string; note: string; href?: string }[] = [
   },
   {
     name: 'archMD',
-    note: 'Markdown editor in a single HTML file. Live preview, Mermaid diagrams, direct disk access via the File System Access API, and export to HTML or PDF. No build step, no server.',
+    note: 'Offline-first PWA for system architects. Live preview, Mermaid diagrams, direct disk access via the File System Access API, and export to HTML or PDF. Ships an MCP server that pairs it with Claude Code, which writes the markdown archMD renders.',
     href: 'https://www.archmd.dev/',
   },
   {
