@@ -23,11 +23,17 @@ export const metadata: Metadata = {
     template: '%s | Ghanithan Subramani',
   },
   description:
-    'Principal engineer at OpsMx. Delivery and security tooling today, diesel engine ECUs and circuit boards before that, and three years underwriting insurance risk in between.',
+    'Principal engineer at OpsMx. Architecture and security tooling today, diesel engine ECUs and circuit boards before that. Rust when the choice is mine.',
   openGraph: {
     type: 'website',
     siteName: 'Ghanithan Subramani',
     url: 'https://www.ghanithan.com',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'From the register level up.' }],
+  },
+  /* summary_large_image, not summary: a text-only card is a grey box. */
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og.png'],
   },
   alternates: {
     types: { 'application/atom+xml': 'https://www.ghanithan.com/blog/feed.xml' },
