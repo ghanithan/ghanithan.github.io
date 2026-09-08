@@ -147,11 +147,11 @@ export const ROLES: Role[] = [
     kind: 'pulse',
     summary: 'Platform architecture: auth, audit, security posture.',
     impact:
-      'Platform architecture across authentication and authorisation, audit, and the service that hands cloud security posture to AI agents over MCP. Cut deployment from 8 hours to 5 minutes, and turned graph-database debugging into a toolset customers run against their own clusters.',
+      'Platform architecture across authentication and authorisation, audit, and cloud security posture. Cut deployment from 8 hours to 5 minutes, and built the service that lets AI agents query live security posture over MCP, in a query language written for it.',
     bullets: [
       'Architected a virtual application packaging solution with Packer, K3s and shell scripting, taking deployment from 8 hours to 5 minutes',
       'Performance work on the Dgraph cluster behind the product: cutting pod restarts, sizing memory, cache and index allocation against real workloads, and pulling query latency down toward a couple of seconds',
-      'Built a diagnostic pair customers run against their own cluster, collecting database and node telemetry into a single report with sizing recommendations, alongside the runbook for acting on it',
+      'Introduced Prometheus instrumentation across the product, with custom counters for the paths that matter, and instrumented the Temporal workflows',
       'Designed the authentication and authorisation architecture: the token model, session handling, and the authorisation model, wired through to audit',
       'Designed the audit service, and delivered it to other services as a Go package with a fluent, chainable API, so recording an event is one expression at the call site',
       'Built a context service for cloud security posture data, exposed to AI agents over MCP, with its own query language and a TTL-based lifecycle',
