@@ -42,8 +42,8 @@ export default function Home() {
         <p className="mt-4 max-w-2xl text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
           The first feature I shipped controlled a water pump inside a diesel truck
           engine. The most recent lets an AI agent query a live security graph. Between
-          them: Go microservices at 60,000 transactions a second, a Bitcoin wallet
-          written in Rust, and three years spent pricing insurance risk.
+          them: circuit boards I drew myself, Go microservices at 60,000 transactions a
+          second, and a Bitcoin wallet written in Rust.
         </p>
       </section>
 
