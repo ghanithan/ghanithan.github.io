@@ -37,12 +37,13 @@ export default function Home() {
     <>
       <section className="pt-6 pb-10">
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight max-w-2xl">
-          I started at the register level.
+          Fifteen years in, the code is still the part I like.
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
-          Device drivers for diesel engine ECUs, then Go microservices at 60,000
-          transactions a second, now delivery and security tooling. Twelve years of
-          engineering, and three underwriting general insurance.
+          The first feature I shipped controlled a water pump inside a diesel truck
+          engine. The most recent lets an AI agent query a live security graph. Between
+          them: Go microservices at 60,000 transactions a second, a Bitcoin wallet
+          written in Rust, and three years spent pricing insurance risk.
         </p>
       </section>
 
