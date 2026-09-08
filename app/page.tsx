@@ -37,7 +37,7 @@ export default function Home() {
     <>
       <section className="pt-6 pb-10">
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight max-w-2xl">
-          Fifteen years in, the code is still the part I like.
+          I started at the register level.
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
           The first feature I shipped controlled a water pump inside a diesel truck
