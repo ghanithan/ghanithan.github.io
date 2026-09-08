@@ -166,7 +166,10 @@ export const ROLES: Role[] = [
 
 export const SKILLS: { heading: string; items: string }[] = [
   { heading: 'Languages', items: 'Rust, Go, JavaScript, C, Python, Java, C++' },
-  { heading: 'Data', items: 'Postgres, Couchbase, MongoDB, CouchDB, Oracle, MySQL' },
+  {
+    heading: 'Data',
+    items: 'Postgres, Dgraph, MongoDB, Couchbase, CouchDB, Redis, Oracle, MySQL',
+  },
   {
     heading: 'Web',
     items:
