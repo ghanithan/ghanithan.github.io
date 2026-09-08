@@ -25,7 +25,7 @@ function resumeHref(): string {
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Fifteen years across embedded systems, insurance underwriting, Go microservices, Rust backends and platform security.',
+    'Fifteen years across embedded systems, Go microservices, Rust backends and platform security.',
 };
 
 export default function Resume() {
@@ -56,7 +56,7 @@ export default function Resume() {
               <h3 className="font-medium">{role.title}</h3>
               <span
                 className="font-mono text-xs ml-auto"
-                style={{ color: role.kind === 'low' ? 'var(--anomaly)' : 'var(--muted)' }}
+                style={{ color: 'var(--muted)' }}
               >
                 {role.period}
               </span>

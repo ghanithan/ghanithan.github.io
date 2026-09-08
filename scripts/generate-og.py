@@ -28,8 +28,8 @@ HEADLINE = "From the register<br />level up."
 
 # Dark half of the site palette. A dark card carries further in Slack and
 # LinkedIn feeds, which are overwhelmingly light.
-GROUND, INK, MUTED, SIGNAL, ANOMALY, RULE = (
-    "#101216", "#e6e8ec", "#98a0ae", "#8098ff", "#e0a050", "#262a31",
+GROUND, INK, MUTED, SIGNAL, RULE = (
+    "#101216", "#e6e8ec", "#98a0ae", "#8098ff", "#262a31",
 )
 
 # Geometry mirrors components/SignalTrace.tsx.
@@ -79,11 +79,9 @@ def traces() -> str:
         d = " ".join(
             f"{'M' if n == 0 else 'L'}{x:.1f},{y}" for n, (x, y) in enumerate(joined)
         )
-        low = kind == "low"
-        dash = ' stroke-dasharray="8 5"' if low else ""
         out.append(
-            f'<path d="{d}" fill="none" stroke="{ANOMALY if low else SIGNAL}"'
-            f' stroke-width="3.5"{dash} vector-effect="non-scaling-stroke"/>'
+            f'<path d="{d}" fill="none" stroke="{SIGNAL}"'
+            f' stroke-width="3.5" vector-effect="non-scaling-stroke"/>'
         )
     return "\n      ".join(out)
 
