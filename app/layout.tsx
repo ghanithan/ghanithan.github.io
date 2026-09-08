@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
+import { hashedAsset } from '@/lib/asset';
 import './globals.css';
 
 const sans = IBM_Plex_Sans({
@@ -16,6 +17,10 @@ const mono = IBM_Plex_Mono({
   display: 'swap',
 });
 
+/* Social platforms cache a scraped og:image for days, so this matters more
+   here than anywhere else on the site. */
+const OG_IMAGE = hashedAsset('og.png');
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ghanithan.com'),
   title: {
@@ -28,12 +33,12 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Ghanithan Subramani',
     url: 'https://www.ghanithan.com',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'From the register level up.' }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'From the register level up.' }],
   },
   /* summary_large_image, not summary: a text-only card is a grey box. */
   twitter: {
     card: 'summary_large_image',
-    images: ['/og.png'],
+    images: [OG_IMAGE],
   },
   alternates: {
     types: { 'application/atom+xml': 'https://www.ghanithan.com/blog/feed.xml' },

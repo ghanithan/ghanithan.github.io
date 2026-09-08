@@ -1,26 +1,6 @@
-import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
 import type { Metadata } from 'next';
+import { hashedAsset } from '@/lib/asset';
 import { ROLES, SKILLS, PROJECTS, CERTIFICATIONS } from '@/lib/career';
-
-const RESUME_PDF = '/Ghanithan_Resume.pdf';
-
-/**
- * Cloudflare fronts this domain and caches PDFs for four hours, overriding the
- * max-age=0 Next sets on public/ assets. A visitor could therefore download a
- * stale résumé long after a deploy, which has already happened once. Stamping
- * the URL with a hash of the file's contents makes every new résumé a new URL,
- * so there is nothing stale to serve. Runs at build time.
- */
-function resumeHref(): string {
-  try {
-    const bytes = readFileSync(join(process.cwd(), 'public', 'Ghanithan_Resume.pdf'));
-    return `${RESUME_PDF}?v=${createHash('sha256').update(bytes).digest('hex').slice(0, 10)}`;
-  } catch {
-    return RESUME_PDF;
-  }
-}
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -40,7 +20,7 @@ export default function Resume() {
             system's parser intact. */}
         <a
           className="btn mt-5"
-          href={resumeHref()}
+          href={hashedAsset('Ghanithan_Resume.pdf')}
           download="Ghanithan_Subramani_Resume.pdf"
         >
           <span className="font-medium">Download résumé</span>
