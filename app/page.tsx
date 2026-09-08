@@ -40,7 +40,7 @@ export default function Home() {
           I started at the register level.
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed" style={{ color: 'var(--muted)' }}>
-          The first code I shipped controlled a water pump inside a diesel truck engine.
+          The first code I shipped controlled a water pump on a diesel truck engine.
           Since then I have laid out circuit boards and pushed Go services past 60,000
           transactions a second. These days I design systems and then build them, in
           Rust when the choice is mine. The layer keeps changing. The question

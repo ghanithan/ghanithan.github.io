@@ -34,7 +34,7 @@ export const ROLES: Role[] = [
     kind: 'square',
     summary: 'Diesel truck engine software. The register level.',
     bullets: [
-      'Development on diesel truck engine software, including the full implementation of water pump control, a new feature in the project',
+      'Development on diesel truck engine software, including the full implementation of water pump control, a new feature: cooling recirculated exhaust gas before it re-entered the intake manifold, to improve combustion',
       'Extended the device encapsulation library for new temperature and pressure sensors, auto-generating C from Perl scripts and the preprocessor',
       'Emergency restart, CAN frame implementation, post-drive relay and resource optimisation',
       'Driver implementation for sensors and actuators; pin allocation and power stages for relays',
