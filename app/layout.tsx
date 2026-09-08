@@ -64,7 +64,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-dvh flex flex-col">
         <header className="w-full max-w-3xl mx-auto px-5 pt-8 pb-4">
           <nav className="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
-            <a href="/" className="font-medium no-underline">
+            {/* The wordmark. Sized above body copy so it does not read as a
+                fifth nav item, and well below the h1 so it does not compete. */}
+            <a
+              href="/"
+              className="text-[17px] font-semibold tracking-tight no-underline"
+            >
               Ghanithan Subramani
             </a>
             <span className="flex-1" />
