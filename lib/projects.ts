@@ -12,12 +12,14 @@ export type Project = {
 };
 
 /**
- * Things that are actually running somewhere. Ordered by how much of them
- * there is to look at, not by date.
+ * Only things a visitor can actually open and use.
  *
- * Deliberately excluded: scratch repos with Pages left on (testrepo,
- * testHTML2PDF), a duplicate front page for Rust Tour, and OpenScribe, whose
- * site is still a placeholder.
+ * That test excludes more than it first appears. mp3player, ReflowReader,
+ * wishMaker and System-Designs all return 200 and looked fine from a title and
+ * a status code, but they are respectively a rendered README for an
+ * unmaintained 2010 console app, a header with no reader under it, an
+ * untouched SvelteKit starter page, and a collection containing one item.
+ * Listing them would send people to dead ends.
  */
 export const PROJECT_SITES: Project[] = [
   {
@@ -49,38 +51,5 @@ export const PROJECT_SITES: Project[] = [
     where: '/keygaurdian',
     built: 'Rust',
     note: 'An open-source password manager written in Rust.',
-  },
-  {
-    name: 'Reflow Reader',
-    href: 'https://www.ghanithan.com/ReflowReader/',
-    where: '/ReflowReader',
-    repo: 'https://github.com/ghanithan/ReflowReader',
-    built: 'JavaScript',
-    note: 'A reader for a range of document formats that lets you set the type size to something you can actually read.',
-  },
-  {
-    name: 'System Designs',
-    href: 'https://www.ghanithan.com/System-Designs/',
-    where: '/System-Designs',
-    repo: 'https://github.com/ghanithan/System-Designs',
-    built: 'Notes',
-    note: 'A collection of system designs I worked through and kept for reference.',
-  },
-  {
-    name: 'wishMaker',
-    href: 'https://www.ghanithan.com/wishMaker/',
-    where: '/wishMaker',
-    repo: 'https://github.com/ghanithan/wishMaker',
-    built: 'Svelte',
-    wip: true,
-    note: 'Generative art posters for wishing people well, drawn with the CSS Houdini painting API.',
-  },
-  {
-    name: 'mp3player',
-    href: 'https://www.ghanithan.com/mp3player/',
-    where: '/mp3player',
-    repo: 'https://github.com/ghanithan/mp3player',
-    built: 'C++',
-    note: 'A console MP3 library manager and playlist editor, written in C++ in my pre-final year of college in 2010. It still runs.',
   },
 ];

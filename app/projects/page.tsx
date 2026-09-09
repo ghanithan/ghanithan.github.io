@@ -13,9 +13,9 @@ export default function Projects() {
       <header className="pb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
         <p className="mt-3 text-[15px] max-w-2xl leading-relaxed" style={{ color: 'var(--muted)' }}>
-          Things that are running somewhere rather than sitting in a repository. Most of
-          them are hosted straight off GitHub, which turns the account into something
-          close to a small web host.
+          Four things you can open and use. Two run on their own domains, two are
+          served straight off GitHub, which quietly turns the account into a small
+          web host.
         </p>
       </header>
 
