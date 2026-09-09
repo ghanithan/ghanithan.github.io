@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
 import { hashedAsset } from '@/lib/asset';
+import Nav from '@/components/Nav';
 import './globals.css';
 
 const sans = IBM_Plex_Sans({
@@ -68,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${sans.variable} ${mono.variable}`}>
       <body className="min-h-dvh flex flex-col">
         <header className="w-full max-w-3xl mx-auto px-5 pt-8 pb-4">
-          <nav className="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+          <div className="flex items-center gap-x-5">
             {/* The wordmark. Sized above body copy so it does not read as a
                 fifth nav item, and well below the h1 so it does not compete. */}
             <a
@@ -77,18 +78,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             >
               Ghanithan Subramani
             </a>
-            <span className="flex-1" />
-            {NAV.slice(1).map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="no-underline hover:underline"
-                style={{ color: 'var(--muted)' }}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
+            <Nav items={NAV.slice(1)} />
+          </div>
         </header>
 
         <main className="w-full max-w-3xl mx-auto px-5 flex-1 pb-16">{children}</main>

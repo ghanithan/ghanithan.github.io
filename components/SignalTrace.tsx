@@ -87,7 +87,12 @@ export default function SignalTrace() {
     });
   }, [width]);
 
-  const onPointerMove = useCallback((e: React.PointerEvent<SVGSVGElement>) => {
+  /**
+   * Wired to pointerdown as well as pointermove. On a touch screen pointermove
+   * only fires once a drag is under way, so with move alone a tap did nothing
+   * and the trace appeared to respond only to swiping.
+   */
+  const selectAt = useCallback((e: React.PointerEvent<SVGSVGElement>) => {
     const rect = svgRef.current?.getBoundingClientRect();
     if (!rect) return;
     const year = Y_START + ((e.clientX - rect.left) / rect.width) * (Y_END - Y_START);
@@ -113,7 +118,8 @@ export default function SignalTrace() {
         className="w-full touch-none select-none"
         preserveAspectRatio="none"
         style={{ height: 'clamp(80px, 14vw, 124px)' }}
-        onPointerMove={onPointerMove}
+        onPointerDown={selectAt}
+        onPointerMove={selectAt}
         aria-hidden="true"
       >
         <line
