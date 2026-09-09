@@ -6,7 +6,7 @@ export const dynamic = 'force-static';
 const BASE = 'https://www.ghanithan.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ['/', '/resume/', '/reading/', '/about/'].map((path) => ({
+  return ['/', '/projects/', '/resume/', '/reading/', '/about/'].map((path) => ({
     url: `${BASE}${path}`,
     lastModified: new Date(),
   }));

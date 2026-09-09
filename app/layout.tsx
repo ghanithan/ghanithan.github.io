@@ -51,6 +51,7 @@ export const metadata: Metadata = {
 const NAV = [
   { href: '/', label: 'Home', internal: true },
   { href: '/blog/', label: 'Writing', internal: false },
+  { href: '/projects/', label: 'Projects', internal: true },
   { href: '/reading/', label: 'Reading', internal: true },
   /* URL stays /resume/ so the conventional path still resolves. */
   { href: '/resume/', label: 'Work', internal: true },
