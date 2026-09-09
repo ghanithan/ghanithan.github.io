@@ -13,9 +13,9 @@ export default function Projects() {
       <header className="pb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
         <p className="mt-3 text-[15px] max-w-2xl leading-relaxed" style={{ color: 'var(--muted)' }}>
-          Four things you can open and use. Two run on their own domains, two are
-          served straight off GitHub, which quietly turns the account into a small
-          web host.
+          Things worth opening. Two run on their own domains, the rest are served
+          straight off GitHub, which quietly turns the account into a small web
+          host.
         </p>
       </header>
 
@@ -26,9 +26,9 @@ export default function Projects() {
               <a href={p.href} className="font-medium">
                 {p.name}
               </a>
-              {p.wip && (
+              {p.tag && (
                 <span className="font-mono text-xs" style={{ color: 'var(--muted)' }}>
-                  in progress
+                  {p.tag}
                 </span>
               )}
               <span

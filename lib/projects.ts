@@ -1,25 +1,25 @@
 export type Project = {
   name: string;
-  /** Where it runs. Several are routes on this same domain. */
+  /** Where it runs, or where it is written up. */
   href: string;
   /** Shown next to the name, so the URL is visible without hovering. */
   where: string;
   repo?: string;
   built: string;
   note: string;
-  /** Set when it is not finished, so the page does not oversell it. */
-  wip?: boolean;
+  /** Short qualifier, when the link is not a running application. */
+  tag?: string;
 };
 
 /**
- * Only things a visitor can actually open and use.
+ * Things worth opening. Mostly that means running software, with one
+ * exception kept on purpose.
  *
- * That test excludes more than it first appears. mp3player, ReflowReader,
- * wishMaker and System-Designs all return 200 and looked fine from a title and
- * a status code, but they are respectively a rendered README for an
- * unmaintained 2010 console app, a header with no reader under it, an
- * untouched SvelteKit starter page, and a collection containing one item.
- * Listing them would send people to dead ends.
+ * A 200 and a sensible title turned out to be no evidence at all: ReflowReader
+ * is a header with no reader under it, wishMaker is the untouched SvelteKit
+ * starter page, and System-Designs is a collection containing one item. Those
+ * are dead ends and stay off. mp3player is also not a running app, but it is
+ * the first real thing he built, so it is here and labelled as what it is.
  */
 export const PROJECT_SITES: Project[] = [
   {
@@ -51,5 +51,14 @@ export const PROJECT_SITES: Project[] = [
     where: '/keygaurdian',
     built: 'Rust',
     note: 'An open-source password manager written in Rust.',
+  },
+  {
+    name: 'mp3player',
+    href: 'https://www.ghanithan.com/mp3player/',
+    where: '/mp3player',
+    repo: 'https://github.com/ghanithan/mp3player',
+    built: 'C++, 2010',
+    tag: 'the first one',
+    note: 'A console MP3 library manager and playlist editor, written in C++ in my pre-final year of college. The first proper thing I built. It is source and a write-up rather than something to run in a browser, and it still compiles.',
   },
 ];
